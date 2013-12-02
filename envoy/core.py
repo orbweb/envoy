@@ -65,7 +65,7 @@ class Command(object):
 
             try:
                 self.process = subprocess.Popen(self.cmd,
-                    universal_newlines=True,
+                    universal_newlines=False,
                     shell=False,
                     env=environ,
                     stdin=subprocess.PIPE,
@@ -241,7 +241,7 @@ def connect(command, data=None, env=None, cwd=None):
     environ.update(env or {})
 
     process = subprocess.Popen(command_str,
-        universal_newlines=True,
+        universal_newlines=False,
         shell=False,
         env=environ,
         stdin=subprocess.PIPE,
