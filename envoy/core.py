@@ -31,7 +31,7 @@ class Command(object):
         def target():
 
             self.process = subprocess.Popen(self.cmd,
-                universal_newlines=True,
+                universal_newlines=False,
                 shell=False,
                 env=os.environ,
                 stdin=subprocess.PIPE,
@@ -193,7 +193,7 @@ def connect(command, data=None):
     # def target():
 
     process = subprocess.Popen(command_str,
-        universal_newlines=True,
+        universal_newlines=False,
         shell=False,
         env=os.environ,
         stdin=subprocess.PIPE,
